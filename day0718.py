@@ -1,5 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 '''
+#了解python中的参数以及try-except函数
 def product(x,*y):
 	count = 1
 	for i in y:
