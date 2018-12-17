@@ -3,8 +3,6 @@
 L = ['Hello','WORLD',18,'APPLE',None]
 print([x.lower() for x in L if isinstance(x,str)])
 '''
-
-
 def triangles():
 	L = [1]
 	while True:
