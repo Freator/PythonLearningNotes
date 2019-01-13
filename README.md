@@ -1,5 +1,3 @@
-#git 教程
-
- - feature-A
- - fix-B
- - feature-C
+# Python学习代码
+这是自己在学习Python过程中写的一些代码  
+时间问题没有整理，比较散乱。文件按照学习日期命名。
