@@ -13,7 +13,7 @@ def city_name():
 	city_dict = {}
 	for k, i in enumerate(city_code_list):
 		if '@' in i:		# 城市作为字典的键，城市编号作为字典的值
-			city_dict[city_code_list[k + 1]] = city_code_list[k + 2].replace(' ', '')
+			city_dict[city_code_list[k + 1]] = city_code_list[k + 2].replace(' ', '')#这里的replace函数是将字符串中的空格符号换掉（或者说去掉空格符），比如 '北 京'变成'北京'。
 	return (city_dict)
 	
 # 输出处理后的值
