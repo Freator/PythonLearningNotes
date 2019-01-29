@@ -2,6 +2,7 @@
 
 # 引入 BeautifulSoup
 from bs4 import BeautifulSoup
+import re
 # 读取MySoup.html文件
 Open_file = open('MySoup.html', 'r', encoding='utf-8')
 # 将MySoup的内容赋值给 Html_Content,并关闭文件
@@ -43,6 +44,7 @@ print("FIRST <a> = " , soup.a)
 print("ALL <a> = " , soup.find_all("a"))
 '''
 
+'''
 # 以下是获取去掉HTML代码的内容的方法
 # 通过getText()函数获取标签的值
 print("HEAD = " , soup.head.getText()) # 直接返回头部名称值，不含'<head>'等这些信息
@@ -51,3 +53,16 @@ print("HEAD = " , soup.head.getText()) # 直接返回头部名称值，不含'<h
 print("Before use str() : ", type(soup.head))
 # 所以要截取中间的字符必须先转换成字符串格式，用函数str()
 print("After use str() : ", type(str(soup.head)))
+'''
+
+'''
+# 获取某标签的属性值，比如我们要获取 <a>的class属性值和id属性值
+print(soup.a['class']) # 这个class 是以列表形式返回的，因为一个class属性可能带有多个CSS样式
+print(soup.a['id'])
+'''
+
+# 实现精确查找
+# 获取第N个<a>标签，我们假设N等于3，即获取文档中第三个<a>标签，以下三种方法都可以
+print(soup.find_all('a', id="try3"))
+print(soup.find_all('a', class_='efg', id="try3")) # 注意这里的class是关键字，所以要加上一个下划线
+print(soup.find_all('a', href=re.compile('PythonLearningNotes'))) #注意这里要import re（处理正则表达式的库）
