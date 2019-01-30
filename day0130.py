@@ -22,6 +22,7 @@ write.writerows(data)
 csvfile.close()
 '''
 
+'''
 # 读取CSV文件(全部数据)
 # 读取函数有两种：reader 和 DictReader
 # 两者都是接受可迭代的对象，reader函数返回列表，
@@ -45,3 +46,21 @@ new_csvfile = open('csvtest.csv', 'r')
 new_readerDict = csv.DictReader(new_csvfile)
 new_rows2 = [new_row2 for new_row2 in new_readerDict]
 print(new_rows2)
+'''
+
+
+# 读取文件中部分数据（某行数据）
+csvfile = open('csvtest.csv', 'r')
+'''
+# 以列表形式输出
+reader = csv.reader(csvfile)
+for row in reader:
+	if 'Zeng' in row:
+		print(row)
+
+'''
+# 以字典形式输出，第一行作为字典的键
+reader = csv.DictReader(csvfile)
+for row in reader:
+	if row['Name'] == 'Zeng':
+		print(row)
