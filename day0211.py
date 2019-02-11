@@ -23,7 +23,7 @@ p.add_run('存储实例.').italic = True
 # 添加正文，设置“样式”->“明显引用”
 document.add_paragraph('样式-明显引用', style='IntenseQuote')
 # 添加正文，设置“项目符号”
-document.add_paragraph('项目符号1', style='ListNumber')
+document.add_paragraph('项目符号1', style='ListBullet')
 document.add_paragraph('项目符号2', style='ListNumber')
 # 添加图片（略）
 # document.ad_picture('name.jpg', width=Inches(1.25))
