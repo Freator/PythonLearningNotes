@@ -33,11 +33,11 @@ myclass = Table('myclass', meta,
 				Column('class_name', CHAR(50))
 				)
 myclass.create(bind=engine)
-'''
+
 # 删除数据表
 # myclass.drop(bind=engine)
 # Base.metadata.drop_all(engine)
-
+'''
 # 首先需要创建一个会话session
 # 生成对话之后，就可以对已有的数据表进行增删改查
 from sqlalchemy.orm import sessionmaker
@@ -45,7 +45,14 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 # 添加数据
-new_data = mytable(name='Li Lei', age=10, birth='2019-02-13', class_name='一年级一班')
+new_data = mytable(name='tang', age=22, birth='2019-02-13', class_name='三年级一班')
 session.add(new_data)
+'''
 session.commit()
 session.close()  # 注意这两个的顺序，一定是先commit 再close
+'''
+
+sql = 'select * from mytable where age=22'
+get_data = session.execute(sql)
+for i in get_data:
+	print(i)
