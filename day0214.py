@@ -1,5 +1,5 @@
 # -*- coding:utf8 -*-
-# 该py问价不能直接运行
+# 该py文件不能直接运行
 # 报错：KeyError: 'API.CustomizedApi'？？？？
 
 import requests
